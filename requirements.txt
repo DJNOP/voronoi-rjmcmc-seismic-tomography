@@ -1,0 +1,9 @@
+﻿numpy
+pandas
+matplotlib
+scipy
+obspy
+tqdm
+cartopy
+shapely
+Pillow
