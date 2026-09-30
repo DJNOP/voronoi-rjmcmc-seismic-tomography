@@ -1,0 +1,26 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+
+# Editors
+.vscode/
+.idea/
+
+# Large RJMCMC outputs
+chains/
+
+# Downloaded / cached seismic data
+northern_europe_denmark_1y_v2/
+northern_europe_trace_cache_v2/
+
+# Generated intermediate results
+results_denmark/
+
+# Temporary files
+*.tmp
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
