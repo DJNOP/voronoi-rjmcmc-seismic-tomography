@@ -2,7 +2,7 @@
 
 Transdimensional seismic travel-time tomography using reversible-jump Markov chain Monte Carlo (rj-MCMC) with a Voronoi-cell parameterization, following Bodin & Sambridge (2009).
 
-This project was developed for **Advanced Methods in Applied Statistics** at the Niels Bohr Institute, University of Copenhagen. The full write-up is in [`paper/AMAS_project_report.pdf`](paper/AMAS_project_report.pdf).
+This project was developed for **Advanced Methods in Applied Statistics** at the Niels Bohr Institute, University of Copenhagen. The full write-up is in [`Transdimensional_seismic_tomography.pdf`](Transdimensional_seismic_tomography.pdf).
 
 ## Overview
 
@@ -45,7 +45,7 @@ Both ensembles recover the same large-scale structure. Uncertainty is lowest whe
 ## Repository structure
 
 ```
-paper/AMAS_project_report.pdf        the report
+Transdimensional_seismic_tomography.pdf   the report
 
 surrogate/
   generate_surrogate_dataset.py      builds the synthetic model + travel times  (Fig. 1)
