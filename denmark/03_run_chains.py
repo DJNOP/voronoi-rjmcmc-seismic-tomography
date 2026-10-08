@@ -13,8 +13,12 @@ def parse_args():
         description="Run RJMCMC chains continuously until stopped, storing each chain in a campaign folder."
     )
 
-    parser.add_argument("--python-exe", required=True, help="Path to Python executable")
-    parser.add_argument("--mcmc-script", required=True, help="Path to denmark_voronoi_rjmcmc_clean.py")
+    parser.add_argument("--python-exe", default=sys.executable, help="Python executable (default: the one running this script)")
+    parser.add_argument(
+        "--mcmc-script",
+        default=str(Path(__file__).resolve().parent / "02_voronoi_rjmcmc.py"),
+        help="Sampler script (default: 02_voronoi_rjmcmc.py next to this file)",
+    )
     parser.add_argument("--csv", required=True, help="Input ray CSV")
 
     parser.add_argument("--chains-root", default="chains", help="Top-level folder that will contain campaign folders")

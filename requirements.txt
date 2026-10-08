@@ -1,9 +1,9 @@
-﻿numpy
+numpy
+scipy
 pandas
 matplotlib
-scipy
-obspy
 tqdm
-cartopy
-shapely
 Pillow
+cartopy      # geographic maps in denmark/04_combine_posteriors.py
+obspy        # waveform download in denmark/01_get_data.py
+jupyter      # surrogate/rjmcmc_surrogate.ipynb

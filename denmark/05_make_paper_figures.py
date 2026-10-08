@@ -1,3 +1,11 @@
+"""
+Assemble the compact two-column paper figures (Figs 3-6 and the appendix maps)
+from the PNGs written by 04_combine_posteriors.py for the 100k and 200k ensembles.
+
+The panels are cropped out of the source images by fixed fractions, so the crop
+boxes in extract_map_frame_and_bar() etc. may need adjusting if the source figure
+layout changes.
+"""
 from __future__ import annotations
 
 import argparse
@@ -259,14 +267,17 @@ def main() -> None:
         args.dir_200k / "geo_velocity_mean_combined.png",
         args.dir_100k / "geo_velocity_uncertainty_combined.png",
         args.dir_200k / "geo_velocity_uncertainty_combined.png",
-        ray,
-        mats,
     ]
     missing = [str(p) for p in required if not p.exists()]
     if missing:
         raise FileNotFoundError("Missing required input files:\n" + "\n".join(missing))
 
-    save_context_overlay(ray, mats, args.outdir / "paper_context_overlay.png")
+    # Fig. 3 overlays the rays on a surface-materials map. 04_combine_posteriors.py no longer
+    # produces that map, so the overlay is only made when one is supplied.
+    if ray.exists() and mats.exists():
+        save_context_overlay(ray, mats, args.outdir / "paper_context_overlay.png")
+    else:
+        print("Skipping paper_context_overlay.png (needs --ray-coverage and --surface-materials images).")
     save_ncells_compare(
         args.dir_100k / "posterior_summary_combined.png",
         args.dir_200k / "posterior_summary_combined.png",
